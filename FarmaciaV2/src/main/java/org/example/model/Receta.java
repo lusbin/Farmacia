@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity @Table(name = "recetas")
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
@@ -28,4 +30,16 @@ public class Receta {
 
     @Column(length = 300)
     private String observaciones;
+
+    @OneToMany(mappedBy = "receta", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RecetaItem> items = new ArrayList<>();
+
+    @PrePersist
+    public void prePersist() {
+        if (creadoEn == null) {
+            creadoEn = LocalDateTime.now();
+        }
+    }
+
+
 }

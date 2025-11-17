@@ -15,6 +15,21 @@ import java.math.BigDecimal;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/*Este test valida todo el flujo real de crear un producto mediante la API REST y luego consultarlo por su ID.*/
+
+/* Prueba la aplicacion completo de
+* Controlador REST
+*Servicio
+*Repositorio
+*Base de datos (perfil test)
+* Serialización JSON
+* Servidor HTTP (puerto aleatorio)
+* */
+
+
+
+
+
 @SpringBootTest(
         classes = FarmaciaApplication.class,
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT

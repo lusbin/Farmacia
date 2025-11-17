@@ -10,6 +10,5 @@ public interface LoteRepository extends JpaRepository<Lote, Long> {
     List<Lote> findByProductoId(Long productoId);
     List<Lote> findByFechaVencimientoBefore(LocalDate fecha);
     List<Lote> findByProductoIdOrderByFechaVencimientoAsc(Long productoId);
-
-
 }
+
